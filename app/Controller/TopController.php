@@ -3,7 +3,7 @@
  *
  */
 
-namespace SampleApp\Controller;
+namespace DietcubeSkeleton\Controller;
 
 use Dietcube\Controller;
 

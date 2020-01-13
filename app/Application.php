@@ -3,11 +3,11 @@
  *
  */
 
-namespace SampleApp;
+namespace DietcubeSkeleton;
 
 use Dietcube\Application as DCApplication;
 use Pimple\Container;
-use SampleApp\Service\SampleService;
+use DietcubeSkeleton\Service\SampleService;
 
 class Application extends DCApplication
 {

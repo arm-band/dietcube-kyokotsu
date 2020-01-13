@@ -1,6 +1,6 @@
 <?php
 
-namespace SampleApp\Service;
+namespace DietcubeSkeleton\Service;
 
 use Dietcube\Components\LoggerAwareTrait;
 

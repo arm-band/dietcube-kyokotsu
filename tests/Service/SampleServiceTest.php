@@ -1,6 +1,6 @@
 <?php
 
-namespace SampleApp\Service;
+namespace DietcubeSkeleton\Service;
 
 class SampleServiceTest extends \PHPUnit_Framework_TestCase
 {
