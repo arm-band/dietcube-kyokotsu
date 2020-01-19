@@ -3,7 +3,7 @@
  *
  */
 
-namespace DietcubeSkeleton\Controller;
+namespace DietcubeKyokotsu\Controller;
 
 use Dietcube\Controller;
 

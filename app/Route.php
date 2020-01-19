@@ -1,6 +1,6 @@
 <?php
 
-namespace DietcubeSkeleton;
+namespace DietcubeKyokotsu;
 
 use Dietcube\RouteInterface;
 use Pimple\Container;
