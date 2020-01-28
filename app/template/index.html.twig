@@ -1,19 +1,14 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="utf-8">
     <meta name="format-detection" content="telephone=on">
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta http-equiv="Content-Style-Type" content="text/css" />
-    <meta http-equiv="Content-Script-Type" content="text/javascript" />
-    <meta name="robots" content="INDEX,FOLLOW" />
+    <meta name="robots" content="index,follow">
 
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <meta name="author" content="">
+    <meta name="description" content="{{ config.appconfig.description }}">
+    <meta name="author" content="{{ config.appconfig.author }}">
 
     <style>
       body {
@@ -26,10 +21,28 @@
         color: #ccc;
       }
       .main {
-        position: absolute;
-        top: 35%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
         text-align: center;
         width: 100%;
+        height: 100vh;
+      }
+      .main::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        opacity: 0.3;
+        background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/41/SekienKyokotsu.jpg');
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: scroll;
       }
       .main h1 {
         font-size: 60px;
@@ -55,8 +68,10 @@
 
     <div class="main">
 
-      <h1>DietcubeKyokotsu</h1>
+      <h1>{{ config.appconfig.appname }}</h1>
       <p>{{ sample_hello }}</p>
+      <p>KYOKOTSU: {{ sample_kyokotsu }}</p>
+      <p>ICHU: {{ sample_ichu }}</p>
 
     </div>
 
@@ -66,5 +81,4 @@
 
   </body>
 </html>
-
 

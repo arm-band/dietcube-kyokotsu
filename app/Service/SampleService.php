@@ -12,4 +12,8 @@ class SampleService
     {
         return 'Hello, welcome to Dietcube.';
     }
+    public function sayKyokotsu()
+    {
+        return getenv('KYOKOTSU');
+    }
 }
