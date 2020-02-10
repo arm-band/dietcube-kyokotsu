@@ -9,7 +9,8 @@
         "phpmd/phpmd": "^2.8.1",
         "zonuexe/dietcube-whoops": "0.0.1",
         "davedevelopment/phpmig": "^v1.6.0",
-        "vlucas/phpdotenv": "^v4.1.0"
+        "vlucas/phpdotenv": "^v4.1.0",
+        "vlucas/valitron": "^v1.4.7"
     },
     "license": "MIT",
     "require": {
