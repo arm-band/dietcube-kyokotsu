@@ -1,65 +1,66 @@
-Project skeleton for Dietcube
-==============================
+# Dietcube Kyokotsu
 
-Setup
------
+## Abstract
 
-This package is a project skeleton for Dietcube.
+This is a project skeleton for Dietcube
 
-```
-composer create-project dietcube/project -s dev your-project
-```
-
-(`your-project` is a sample directory name for the project. Camelized name of the directory is used as your application namespace (e.g. `YourProject\\`).
-
-
-Configuration File
-------------------
+## Setup
 
 ```
-edit app/config/config.php
-edit app/config/config_{DIET_ENV}.php
+git clone https://github.com/arm-band/dietcube-kyokotsu.git
 ```
 
-Set debug mode on:
+## Configuration
 
 ```
-<?php
-
-return [
-    'debug' => true,
-
-    ...
-];
+app/config/config.php
 ```
 
-Environment
------------
+## Environment
 
-`DIET_ENV` is the ENV name.
-
-If `DIET_ENV` is not set for any environment variable (Dietcube checks `$_SERVER['DIET_ENV']` and `getenv('DIET_ENV')`), `Dispatcher::getEnv()` returns `production` by default.
-
-Typically, `development` is used for development environment so `dietcube-project`'s initialise script generates `app/config/config_development.php` for default development config file.
-
-### Example: Configuration of Web Server
-
-For example, set `DIET_ENV` as `development`.
-
-Apache Conf:
+Enviroment file setups by `composer reqiure` or `composer install` from `sample.env`
 
 ```
-SetEnv DIET_ENV production
+.env
 ```
 
-Nginx Conf (with php-fpm):
+## Run with PHP built-in server
 
 ```
-fastcgi_param  DIET_ENV production;
+composer start
+```
+## Use below the sub directory
+
+`.htaccess` setups by `composer reqiure` or `composer install`
+
+```
+DirectoryIndex index.html index.php
+
+RewriteEngine On
+RewriteBase /
+
+RewriteRule ^$ /PATH/TO/dietcube-kyokotsu/webroot/index.php [QSA,L]
+
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule (.*) - [QSA,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} \.(css|js|jpg|jpeg|gif|png|svg|ico)$
+RewriteCond %{REQUEST_FILENAME} !^(.*)(webroot)+(.*)$
+RewriteRule ^(.*)$ /PATH/TO/dietcube-kyokotsu/webroot/$1 [QSA,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ /PATH/TO/dietcube-kyokotsu/webroot/index.php [QSA,L]
 ```
 
-### Run with PHP built-in server
+and write parameter `ROOT_PATH` in `.env`
 
 ```
-DIET_ENV=development php -d variables_order=EGPCS -S 0:8080 -t webroot/
+ROOT_PATH=/PATH/TO/dietcube-kyokotsu/
 ```
+
+---
+
+Powered by [dietcube/project](https://github.com/dietcube/project).

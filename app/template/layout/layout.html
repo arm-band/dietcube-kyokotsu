@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=on">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <meta name="robots" content="index,follow">
+
+    <meta name="description" content="{{ config.appconfig.description }}">
+    <meta name="author" content="{{ config.appconfig.author }}">
+
+    <style>
+      body {
+        font-family: Helvetica;
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+      }
+      a {
+        color: #ccc;
+      }
+      .main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        height: 100vh;
+      }
+      .main::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        opacity: 0.3;
+        background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/41/SekienKyokotsu.jpg');
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: scroll;
+      }
+      .main h1 {
+        font-size: 60px;
+      }
+      .main p {
+        font-size: 24px;
+        color: #444;
+      }
+      .main input, .main button {
+        color: #444;
+        margin-bottom: 16px;
+      }
+      .footer {
+        padding: 16px;
+        bottom: 0;
+        position: fixed;
+        width: 100%;
+        text-align: center;
+        background: #444;
+        color: #ccc;
+      }
+    </style>
+
+    <title>{{ pagetitle }} | Welcome to Dietcube</title>
+  </head>
+  <body>
+
+    {% block body %}
+    {% endblock %}
+
+    <footer class="footer">
+    <p>Project powered by <a href="https://github.com/mercari/dietcube">Dietcube</a>, &#169;&nbsp;{{ cryear }}&nbsp;{{ config.appconfig.author }}. </p>
+    </footer>
+
+  </body>
+</html>
+
+
