@@ -24,11 +24,11 @@ class TopController extends Controller
         $sample_service = $this->get('service.sample');
 
         return $this->render('index', [
-            'sample_hello' => $sample_service->sayHello(),
+            'sample_hello'    => $sample_service->sayHello(),
             'sample_kyokotsu' => $sample_service->sayKyokotsu(),
             'sample_ichu'     => getenv('ICHU'),
-            'cryear'      => $this->cryear_service->year(),
-            'rootpath'    => getEnv('ROOT_PATH'),
+            'cryear'          => $this->cryear_service->year(),
+            'rootpath'        => getEnv('ROOT_PATH'),
         ]);
     }
 }

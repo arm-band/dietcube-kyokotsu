@@ -10,7 +10,8 @@ class CRYearService
 
     protected $filepath;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->filepath = __DIR__ . '/../config/config.php';
     }
 
@@ -26,6 +27,7 @@ class CRYearService
         if ((int)$nowyear > (int)$config['appconfig']['year']) {
             return $config['appconfig']['year'] . '-' . $nowyear;
         }
+
         return $nowyear;
     }
 }

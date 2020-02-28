@@ -13,7 +13,8 @@ class ValidationService
     protected $container;
     protected $v;
 
-    public function __construct(Container $container) {
+    public function __construct(Container $container)
+    {
         $this->container = $container;
         \Valitron\Validator::lang('ja');
     }
@@ -45,6 +46,7 @@ class ValidationService
                     array_push($errors, $value);
                 }
             }
+
             return $errors;
         }
     }

@@ -18,7 +18,6 @@ class SampleController extends Controller
     const METHOD_NOT_ALLOWED = 405;
 
     protected $container;
-    protected $sample_service;
     protected $cryear_service;
     protected $setarray_service;
     protected $validation_service;
@@ -26,7 +25,6 @@ class SampleController extends Controller
     public function __construct(Container $container)
     {
         $this->container = $container;
-        $this->sample_service = $this->get('service.sample');
         $this->cryear_service = $this->get('service.cryear');
         $this->setarray_service = $this->get('service.setarray');
         $this->validation_service = $this->get('service.validation');
