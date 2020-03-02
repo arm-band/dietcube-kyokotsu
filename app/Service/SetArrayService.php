@@ -12,7 +12,7 @@ class SetArrayService
     {
         return [
             'pagetitle'   => '処理完了',
-            'description' => 'process Finished',
+            'description' => 'Process Finished',
             'cryear'      => $cryear_service->year(),
             'rootpath'    => getEnv('ROOT_PATH'),
         ];

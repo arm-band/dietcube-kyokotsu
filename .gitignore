@@ -4,5 +4,6 @@ vendor/*
 .sass-cache/
 /phpunit.xml
 composer.lock
+/webroot/img/*
 .htaccess
 .env
