@@ -1,11 +1,13 @@
 {% extends 'layout/layout.html' %}
 
 {% block body %}
-    <div class="main">
-
-        <h1>{{ pagetitle }} <small>{{ description }}</small></h1>
-        <p>処理が完了しました。</p>
-
-        <p><a href="{{ rootpath }}">トップへ戻る</a></p>
-    </div>
+    <main class="main">
+        <section class="container my-5">
+            <h1 class="mb-3">{{ pagetitle }} <small>{{ description }}</small></h1>
+            <p>処理が完了しました。</p>
+            <div class="mt-4">
+                <a href="{{ rootpath }}" class="btn btn-secondary"><i class="fas fa-fw fa-undo mr-2" aria-hidden="true"></i>トップへ戻る</a>
+            </div>
+        </section>
+    </main>
 {% endblock %}

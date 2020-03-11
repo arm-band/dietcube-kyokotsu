@@ -17,5 +17,14 @@ return [
         'description' => 'Dietcubeのスケルトンプロジェクトです。',
         'author'      => 'アルム＝バンド',
         'year'        => 2020,
+        'url'         => 'https://localhost:8889/',
+        'themecolor'  => '#e5b786',
+        'ogp'         => [
+            'card'    => 'photo',
+            'account' => 'Bredtn_1et',
+            'type'    => 'website',
+            'image'   => 'webroot/img/eyecatch.jpg',
+            'initImg' => 'https://upload.wikimedia.org/wikipedia/commons/4/41/SekienKyokotsu.jpg',
+        ],
     ],
 ];

@@ -1,20 +1,29 @@
 {% extends 'layout/layout.html' %}
 
 {% block body %}
-    <div class="main">
-
-        <h1>{{ config.appconfig.appname }}</h1>
-        <p>{{ sample_hello }}</p>
-        <p>KYOKOTSU: {{ sample_kyokotsu }}</p>
-        <p>ICHU: {{ sample_ichu }}</p>
-
-        <form action="{{ rootpath }}sample" method="post">
-            <div>
-                <input type="text" name="sample_post" value="テストです">
+    <main class="main">
+        <section class="container my-5">
+            <div class="row mb-4">
+                <div class="col-md-9 offset-md-3">
+                    <h1 class="mb-3">{{ config.appconfig.appname }}</h1>
+                    <p>{{ sample_hello }}</p>
+                    <p>KYOKOTSU: {{ sample_kyokotsu }}</p>
+                    <p>ICHU: {{ sample_ichu }}</p>
+                </div>
             </div>
-            <div>
-                <button type="submit">送信</button>
-            </div>
-        </form>
-    </div>
+            <form action="{{ rootpath }}sample" method="post">
+                <div class="form-group row">
+                    <label for="sample_post" class="col-md-3 col-form-label text-right">テスト</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" id="sample_post" name="sample_post" value="テストです">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-9 offset-md-3">
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-fw fa-paper-plane mr-2" aria-hidden="true"></i>送信</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
 {% endblock %}
