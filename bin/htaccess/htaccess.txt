@@ -1,4 +1,4 @@
-SetEnvIf Request_URI "(\.(log|txt|dat|csv|ini|tpl|yml|env|htaccess|htpasswd)|/(app|bin|migrations|tests|tmp|vendor)/)$" ng_dir
+SetEnvIf Request_URI "(\.(log|txt|dat|csv|ini|tpl|yml|json|env|htaccess|htpasswd)|/(app|bin|migrations|tests|tmp|vendor)(.)*/)$" ng_dir
 Order Allow,Deny
 Allow from all
 Deny from env=ng_dir
