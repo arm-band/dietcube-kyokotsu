@@ -26,9 +26,9 @@ class TopController extends Controller
         return $this->render('index', [
             'sample_hello'    => $sample_service->sayHello(),
             'sample_kyokotsu' => $sample_service->sayKyokotsu(),
-            'sample_ichu'     => getenv('ICHU'),
+            'sample_ichu'     => $_ENV['ICHU'],
             'cryear'          => $this->cryear_service->year(),
-            'rootpath'        => getEnv('ROOT_PATH'),
+            'rootpath'        => $_ENV['ROOT_PATH'],
         ]);
     }
 }

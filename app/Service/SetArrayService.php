@@ -14,7 +14,7 @@ class SetArrayService
             'pagetitle'   => '処理完了',
             'description' => 'Process Finished',
             'cryear'      => $cryear_service->year(),
-            'rootpath'    => getEnv('ROOT_PATH'),
+            'rootpath'    => $_ENV['ROOT_PATH'],
         ];
     }
     public function setErrorArray($code, $phrase, $errors, $cryear_service)
@@ -24,7 +24,7 @@ class SetArrayService
             'description' => $phrase,
             'errors'      => $errors,
             'cryear'      => $cryear_service->year(),
-            'rootpath'    => getEnv('ROOT_PATH'),
+            'rootpath'    => $_ENV['ROOT_PATH'],
         ];
     }
 }

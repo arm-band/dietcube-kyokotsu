@@ -14,6 +14,6 @@ class SampleService
     }
     public function sayKyokotsu()
     {
-        return getenv('KYOKOTSU');
+        return $_ENV['KYOKOTSU'];
     }
 }
