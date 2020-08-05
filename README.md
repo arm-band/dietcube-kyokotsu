@@ -37,9 +37,9 @@ composer start
 DirectoryIndex index.html index.php
 
 RewriteEngine On
-RewriteBase /
+RewriteBase /PATH/TO/dietcube-kyokotsu/
 
-RewriteRule ^$ /PATH/TO/dietcube-kyokotsu/webroot/index.php [QSA,L]
+RewriteRule ^$ webroot/index.php [QSA,L]
 
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
@@ -49,10 +49,10 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} \.(css|js|jpg|jpeg|gif|png|svg|ico)$
 RewriteCond %{REQUEST_FILENAME} !^(.*)(webroot)+(.*)$
-RewriteRule ^(.*)$ /PATH/TO/dietcube-kyokotsu/webroot/$1 [QSA,L]
+RewriteRule ^(.*)$ webroot/$1 [QSA,L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)$ /PATH/TO/dietcube-kyokotsu/webroot/index.php [QSA,L]
+RewriteRule ^(.*)$ webroot/index.php [QSA,L]
 ```
 
 and write parameter `ROOT_PATH` in `.env`
