@@ -27,7 +27,7 @@ try {
     // .htaccess copy
     if(!file_exists(__DIR__ . ENV_PATH . HTACCESS) && file_exists(HTACCESS_BASE)) {
         $content = file_get_contents(HTACCESS_BASE);
-        $content = preg_replace(HTACCESS_REPLACE, getEnv('ROOT_PATH'), $content);
+        $content = preg_replace(HTACCESS_REPLACE, $_ENV['ROOT_PATH'], $content);
         file_put_contents(__DIR__ . ENV_PATH . HTACCESS, $content);
         echo HTACCESS . ' make successed!';
     }

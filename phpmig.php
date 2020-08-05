@@ -19,7 +19,7 @@ $container['phpmig.adapter'] = new Adapter\File\Flat(__DIR__ . DIRECTORY_SEPARAT
 
 //DBの接続情報
 $container['db'] = function(){
-    $dbh = new PDO('mysql:dbname=' . getenv('MYSQL_DBNAME') . ';host='  . getenv('MYSQL_HOST') .  ';port=' . getenv('MYSQL_PORT') . ';charset=utf8', getenv('MYSQL_USER') , getenv('MYSQL_PASSWORD'));
+    $dbh = new PDO('mysql:dbname=' . $_ENV['MYSQL_DBNAME'] . ';host='  . $_ENV['MYSQL_HOST'] .  ';port=' . $_ENV['MYSQL_PORT'] . ';charset=utf8', $_ENV['MYSQL_USER'] , $_ENV['MYSQL_PASSWORD']);
     $dbh -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     return $dbh;
 };

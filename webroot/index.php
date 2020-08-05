@@ -22,7 +22,7 @@ if (is_readable($dot_env)) {
 }
 
 // debug (development)
-if(!(Integer)getEnv('PROD_FLG')) {
+if(!(Integer)$_ENV['PROD_FLG']) {
     ini_set('xdebug.var_display_max_children', -1);
     ini_set('xdebug.var_display_max_data', -1);
     ini_set('xdebug.var_display_max_depth', -1);
