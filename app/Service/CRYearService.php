@@ -8,24 +8,18 @@ class CRYearService
 {
     use LoggerAwareTrait;
 
-    protected $filepath;
+    protected $config;
 
-    public function __construct()
+    public function __construct($config)
     {
-        $this->filepath = __DIR__ . '/../config/config.php';
+        $this->config = $config;
     }
 
     public function year()
     {
-        if(file_exists($this->filepath)) {
-            $config = include($this->filepath);
-        }
-        else {
-            throw new \Dietcube\Exception\HttpNotFoundException();
-        }
         $nowyear = date('Y');
-        if ((int)$nowyear > (int)$config['appconfig']['year']) {
-            return $config['appconfig']['year'] . '-' . $nowyear;
+        if ((int)$nowyear > (int)$this->config['appconfig']['year']) {
+            return $this->config['appconfig']['year'] . '-' . $nowyear;
         }
 
         return $nowyear;

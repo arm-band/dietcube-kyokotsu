@@ -21,14 +21,22 @@ class Application extends DCApplication
 
     public function config(Container $container)
     {
+        $configPath = __DIR__ . '/config/config.php';
+        if(file_exists($configPath)) {
+            $config = include($configPath);
+        }
+        else {
+            throw new \Dietcube\Exception\HttpNotFoundException();
+        }
+
         // setup container or services here
         $container['service.sample'] = function () use ($container)  {
             $sample_service = new SampleService();
             $sample_service->setLogger($container['logger']);
             return $sample_service;
         };
-        $container['service.cryear'] = function () use ($container) {
-            $cryear_service = new CRYearService();
+        $container['service.cryear'] = function () use ($container, $config) {
+            $cryear_service = new CRYearService($config);
             $cryear_service->setLogger($container['logger']);
             return $cryear_service;
         };
