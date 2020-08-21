@@ -11,7 +11,7 @@ use Dietcube\Controller;
 class TopController extends Controller
 {
     const OK = 200;
-    const BAD_REQUEST = 400;
+    const FORBIDDEN = 403;
 
     protected $container;
     protected $cryear_service;
@@ -44,7 +44,7 @@ class TopController extends Controller
     public function errorie()
     {
         $response = $this->getResponse();
-        $response->setStatusCode(self::BAD_REQUEST);
+        $response->setStatusCode(self::FORBIDDEN);
         return $this->render('errorie', [
             'cryear'          => $this->cryear_service->year(),
             'rootpath'        => $_ENV['ROOT_PATH'],

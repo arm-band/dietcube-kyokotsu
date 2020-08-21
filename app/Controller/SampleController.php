@@ -14,7 +14,6 @@ class SampleController extends Controller
 {
     const OK = 200;
     const BAD_REQUEST = 400;
-    const FORBIDDEN = 403;
     const METHOD_NOT_ALLOWED = 405;
 
     protected $container;
