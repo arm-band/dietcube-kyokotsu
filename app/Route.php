@@ -15,6 +15,7 @@ class Route implements RouteInterface
         return [
             ['GET', $_ENV['ROOT_PATH'], 'Top::index'],
             ['POST', $_ENV['ROOT_PATH'] . 'sample', 'Sample::sample'],
+            [['GET', 'POST'], $_ENV['ROOT_PATH'] . 'error-ie', 'Top::errorie'],
         ];
     }
 }

@@ -10,6 +10,7 @@ use Pimple\Container;
 use DietcubeKyokotsu\Service\SampleService;
 use DietcubeKyokotsu\Service\CRYearService;
 use DietcubeKyokotsu\Service\SetArrayService;
+use DietcubeKyokotsu\Service\NozarashiService;
 use DietcubeKyokotsu\Service\ValidationService;
 
 class Application extends DCApplication
@@ -44,6 +45,11 @@ class Application extends DCApplication
             $setarray_service = new SetArrayService();
             $setarray_service->setLogger($container['logger']);
             return $setarray_service;
+        };
+        $container['service.nozarashi'] = function () use ($container) {
+            $nozarashi_service = new NozarashiService();
+            $nozarashi_service->setLogger($container['logger']);
+            return $nozarashi_service;
         };
         $container['service.validation'] = function () use ($container) {
             $validation_service = new ValidationService($container);

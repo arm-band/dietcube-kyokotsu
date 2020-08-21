@@ -20,6 +20,7 @@ class SampleController extends Controller
     protected $container;
     protected $cryear_service;
     protected $setarray_service;
+    protected $nozarashi_service;
     protected $validation_service;
 
     public function __construct(Container $container)
@@ -27,21 +28,25 @@ class SampleController extends Controller
         $this->container = $container;
         $this->cryear_service = $this->get('service.cryear');
         $this->setarray_service = $this->get('service.setarray');
+        $this->nozarashi_service = $this->get('service.nozarashi');
         $this->validation_service = $this->get('service.validation');
     }
 
     public function sample()
     {
+        if(!$this->nozarashi_service->kusouzu($_SERVER['HTTP_USER_AGENT'])) {
+            $this->redirect($_ENV['IE_PATH']);
+        }
         $response = $this->getResponse();
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
             //validation
             $errors = $this->validation_service->validationSample($_POST);
-            $response = $this->getResponse();
             if(count($errors)) {
                 $response->setStatusCode(self::BAD_REQUEST);
                 return $this->render('error', $this->setarray_service->setErrorArray(self::BAD_REQUEST, $response->getReasonPhrase(), $errors, $this->cryear_service));
             }
             else {
+                $response->setStatusCode(self::OK);
                 return $this->render('finished', $this->setarray_service->setFinishArray($this->cryear_service));
             }
         }
