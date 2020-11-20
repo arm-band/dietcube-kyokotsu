@@ -6,3 +6,5 @@ vendor/*
 /webroot/img/*
 .htaccess
 .env
+/coverage/
+.phpunit.result.cache
