@@ -23,6 +23,7 @@
     },
     "scripts": {
         "start": "php -d variables_order=EGPCS -S localhost:8999 -t webroot/",
+        "test": "phpunit",
         "test:coverage": "phpunit --coverage-html coverage",
         "post-install-cmd": "php bin/postinstall.php",
         "post-update-cmd": "php bin/postinstall.php"
