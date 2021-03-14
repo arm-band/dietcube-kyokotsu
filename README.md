@@ -1,5 +1,7 @@
 # Dietcube Kyokotsu
 
+[![PHPUnit test](https://github.com/arm-band/dietcube-kyokotsu/actions/workflows/phpunit.yml/badge.svg)](https://github.com/arm-band/dietcube-kyokotsu/actions/workflows/phpunit.yml)
+
 ## Abstract
 
 This is a project skeleton for Dietcube
