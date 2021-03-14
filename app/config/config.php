@@ -16,7 +16,7 @@ return [
         'appname'     => 'Dietcube Kyokotsu',
         'description' => 'Dietcubeのスケルトンプロジェクトです。',
         'author'      => 'アルム＝バンド',
-        'year'        => 2020,
+        'year'        => 2021,
         'url'         => 'https://localhost:8889/',
         'themecolor'  => '#e5b786',
         'ogp'         => [

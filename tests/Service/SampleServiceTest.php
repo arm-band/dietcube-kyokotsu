@@ -8,12 +8,18 @@ class SampleServiceTest extends \PHPUnit\Framework\TestCase
     {
         $sample_service = new SampleService();
 
-        $this->assertEquals('Hello, welcome to Dietcube.', $sample_service->sayHello());
+        $this->assertEquals(
+            'Hello, welcome to Dietcube.',
+            $sample_service->sayHello()
+        );
     }
     public function testSayKyokotsu()
     {
         $sample_service = new SampleService();
 
-        $this->assertEquals('HANAHADASHI', $sample_service->sayKyokotsu());
+        $this->assertEquals(
+            'HANAHADASHI',
+            $sample_service->sayKyokotsu()
+        );
     }
 }

@@ -16,6 +16,11 @@
           <directory suffix=".php">./tests</directory>
           <directory>./app/template</directory>
           <directory>./app/config</directory>
+          <directory>./app/Controller</directory>
+          <file>./app/Service/SessionService.php</file>
+          <file>./app/Service/TokenService.php</file>
+          <file>./app/Application.php</file>
+          <file>./app/Route.php</file>
         </exclude>
       </whitelist>
     </filter>

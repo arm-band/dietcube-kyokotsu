@@ -12,6 +12,8 @@ use DietcubeKyokotsu\Service\CRYearService;
 use DietcubeKyokotsu\Service\SetArrayService;
 use DietcubeKyokotsu\Service\NozarashiService;
 use DietcubeKyokotsu\Service\ValidationService;
+use DietcubeKyokotsu\Service\SessionService;
+use DietcubeKyokotsu\Service\TokenService;
 
 class Application extends DCApplication
 {
@@ -24,7 +26,7 @@ class Application extends DCApplication
     {
         $configPath = __DIR__ . '/config/config.php';
         if(file_exists($configPath)) {
-            $config = include($configPath);
+            $config = require($configPath);
         }
         else {
             throw new \Dietcube\Exception\HttpNotFoundException();
@@ -55,6 +57,16 @@ class Application extends DCApplication
             $validation_service = new ValidationService($container);
             $validation_service->setLogger($container['logger']);
             return $validation_service;
+        };
+        $container['service.session'] = function () use ($container) {
+            $session_service = new SessionService();
+            $session_service->setLogger($container['logger']);
+            return $session_service;
+        };
+        $container['service.token'] = function () use ($container) {
+            $token_service = new TokenService();
+            $token_service->setLogger($container['logger']);
+            return $token_service;
         };
     }
 }
