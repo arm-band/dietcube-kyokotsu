@@ -8,7 +8,6 @@ namespace DietcubeKyokotsu\Controller;
 
 use Pimple\Container;
 use Dietcube\Controller;
-use Valitron\Validator;
 use DietcubeKyokotsu\Helper as Helper;
 
 /**
